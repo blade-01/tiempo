@@ -94,6 +94,7 @@ export default {
         this.searchParam = data.city;
         this.searchWeather()
         });
+    this.searchWeather;
   }
 };
 </script>
