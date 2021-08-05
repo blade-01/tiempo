@@ -87,7 +87,7 @@ export default {
       return moment(date).format('ddd, D MMM');
     }
   },
-  created() {
+  mounted() {
     fetch('https://extreme-ip-lookup.com/json/')
       .then(res => res.json())
       .then(data => {
