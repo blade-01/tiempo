@@ -51,7 +51,7 @@ export default {
   data() {
     return {
       open: false,
-      searchParam: '',
+      searchParam: 'Lagos',
       err: '',
       location: '',
       api_key: 'fa6b771ed8192cc654a3f6dfb3988af7',
@@ -88,13 +88,13 @@ export default {
     }
   },
   mounted() {
-    fetch('https://extreme-ip-lookup.com/json/')
-      .then(res => res.json())
-      .then(data => {
-        this.searchParam = data.city;
-        this.searchWeather()
-        });
-    this.searchWeather;
+    // fetch('https://extreme-ip-lookup.com/json/')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     this.searchParam = data.city;
+    //     this.searchWeather();
+    //     });
+    this.searchWeather();
   }
 };
 </script>
