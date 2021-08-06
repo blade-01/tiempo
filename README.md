@@ -63,6 +63,7 @@ Users should be able to:
 - View the optimal layout for the web app depending on their device's screen size
 - See a default location.
 - Search for city.
+- See weather updates by 3hrs.
 - See the date and location of the weather.
 - See an image according to each type of weather.
 - See temperature in both Celsius and Farenheit.
