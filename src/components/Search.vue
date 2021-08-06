@@ -88,12 +88,6 @@ export default {
     }
   },
   mounted() {
-    // fetch('https://extreme-ip-lookup.com/json/')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     this.searchParam = data.city;
-    //     this.searchWeather();
-    //     });
     this.searchWeather();
   }
 };

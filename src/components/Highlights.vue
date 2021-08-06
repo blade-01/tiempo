@@ -4,7 +4,7 @@
     <div class="highlight-card">
       <div class="highlight box-shadow">
         <h3>Wind status</h3>
-        <p>{{ roundUp(wind) }} mph</p>
+        <p>{{ roundUp(wind) }} mps</p>
         <p class="flex"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg> <span>wsw</span></p>
       </div>
       <div class="highlight box-shadow">
@@ -20,21 +20,18 @@
       </div>
       <div class="highlight box-shadow">
         <h3>Air Pressure</h3>
-        <p>{{ roundUp(pressure) }} mb</p>
+        <p>{{ roundUp(pressure) }} hPa</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import RoundUp from "@/mixins/RoundUp";
 export default {
   name: 'Highlights',
   props: ['wind', 'humidity', 'pressure', 'visibility'],
-  methods: {
-    roundUp(data) {
-      return Math.round(data);
-    },
-  }
+  mixins: [RoundUp],
 }
 </script>
 

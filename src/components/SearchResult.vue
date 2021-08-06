@@ -6,12 +6,12 @@
           <div class="container">
             <div class="weather-inner">
               <div class="degrees">
-                <button class="btn degree" @click="convertCelc">℃</button>
-                <button class="btn degree" @click="convertFran">℉</button>
+                <button class="btn degree" @click="convertToCelc">℃</button>
+                <button class="btn degree" @click="convertToFran">℉</button>
               </div>
               <div class="day-card">
                 <div class="card box-shadow" v-for="weather in weathers" :key="weather.index">
-                  <p>{{ isToday(weather.dt_text) }}</p>
+                  <p>{{ isToday(weather.dt_txt) }}</p>
                   <img :src="icon" :alt="weather.weather[0].icon" />
                   <div class="day-degree flex-between">
                     <p><b>{{ roundUp(weather.main.temp) }}℃</b></p>
@@ -20,6 +20,9 @@
                 </div>
               </div>
               <Highlights :wind="wind" :humidity="humidity" :pressure="pressure" :visibility="visibility" />
+            </div>
+            <div class="attr">
+              <p>Created by <a href="https://github.com/blade-01" target="_blank">Blade</a> - devchallenges.io</p>
             </div>
           </div>
         </div>
@@ -31,6 +34,7 @@
 import moment from 'moment';
 import Search from "@/components/Search.vue";
 import Highlights from "@/components/Highlights.vue";
+import RoundUp from "@/mixins/RoundUp";
 export default {
   name: 'Main',
   components: {Search, Highlights},
@@ -52,17 +56,14 @@ export default {
       this.wind = data.list[0].main.sea_level ? data.list[0].main.sea_level : '0';
       this.humidity = data.list[0].main.humidity;
       this.pressure = data.list[0].main.pressure;
-      this.visibility = data.list[0].main.feels_like ? data.list[0].main.feels_like : '0';
+      this.visibility = data.list[0].visibility ? data.list[0].visibility : '0';
       this.icon = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
-      console.log(data.list);
     },
     isToday(date) {
-      return moment(date).format('ddd, D MMM');
-    },
-    roundUp(data) {
-      return Math.round(data);
+      return moment(date).format('Do MMM - hA');
     },
   },
+  mixins: [RoundUp],
 }
 </script>
 
@@ -94,6 +95,7 @@ export default {
 }
 .btn.degree {
   border-radius: 50%;
+  cursor: initial;
 }
 .btn.degree:nth-child(1) {
   background: var(--celcius-bg);
@@ -102,6 +104,14 @@ export default {
 .btn.degree:nth-child(2) {
   background: var(--farenheit-bg);
   margin-left: 0.5rem;
+}
+.attr {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+.attr a {
+  color: var(--date-time-color);
+  font-weight: bold;
 }
 @media screen and (min-width: 700px){
   .card {
