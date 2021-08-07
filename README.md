@@ -56,7 +56,7 @@ Yayy 🤾!!! I built a weather app for checking users weather based on location 
 
 ## Features
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/UgCqszKR7Q7oqb4kRfI0) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/) challenge. The [challenge](https://devchallenges.io/challenges/CtDWGnE4mBDp1s9HLRig) was to build an application to complete the given user stories.
 
 Users should be able to:
 
@@ -67,7 +67,7 @@ Users should be able to:
 - See the date and location of the weather.
 - See an image according to each type of weather.
 - See temperature in both Celsius and Farenheit.
-- See humidiy, wind direction, visibility and pressure values.
+- See humidity, wind direction, visibility and pressure values.
 
 ## How To Use
 
