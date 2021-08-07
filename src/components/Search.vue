@@ -63,7 +63,7 @@ export default {
       this.searchParam = '';
     },
     searchWeather() {
-      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.searchParam}&appid=${this.api_key}&cnt=5`)
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.searchParam}&appid=${this.api_key}&cnt=5&units=metric`)
           .then(res => {
             if (res.status !== 200) {
             this.err = 'Please enter a valid location';
