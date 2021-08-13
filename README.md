@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://blade-01/tiempo.git">
+    <a href="https://github.com/blade-01/tiempo">
       Code
     </a>
     <span> | </span>
